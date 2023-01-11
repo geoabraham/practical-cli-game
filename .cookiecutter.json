@@ -1,0 +1,14 @@
+{
+  "_output_dir": "/home/gabraham/Dev/Training",
+  "_template": "gh:cjolowicz/cookiecutter-hypermodern-python",
+  "author": "Geo Abraham",
+  "copyright_year": "2023",
+  "development_status": "Development Status :: 1 - Planning",
+  "email": "geoabraham@tuta.io",
+  "friendly_name": "Practical Cli Game",
+  "github_user": "geoabraham",
+  "license": "MIT",
+  "package_name": "practical_cli_game",
+  "project_name": "practical-cli-game",
+  "version": "0.0.0"
+}
