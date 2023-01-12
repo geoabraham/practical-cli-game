@@ -1,4 +1,12 @@
 [[package]]
+name = "adventurelib"
+version = "1.2.1"
+description = "Easy text adventures"
+category = "main"
+optional = false
+python-versions = ">=3"
+
+[[package]]
 name = "alabaster"
 version = "0.7.12"
 description = "A configurable sidebar-enabled Sphinx theme"
@@ -1119,9 +1127,13 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7"
-content-hash = "10d2c84c87aebc5a982c3a9890723b67c4a4fe6b955bec48af644564d3f3cd47"
+content-hash = "eb491729df4f2c39c223cfb3405370773e9e18707813cc3b54bfbfdb2c7c8842"
 
 [metadata.files]
+adventurelib = [
+    {file = "adventurelib-1.2.1-py3-none-any.whl", hash = "sha256:aac1eba3ce841c13c5aa19c94916f6d75ebad9e5ebd5fb50524acd8733b8b432"},
+    {file = "adventurelib-1.2.1.tar.gz", hash = "sha256:8772d0d9085abf6d6bb0ddea0aa3d8f8228c1cc8a052ff68cd741af27cfdba8e"},
+]
 alabaster = [
     {file = "alabaster-0.7.12-py2.py3-none-any.whl", hash = "sha256:446438bdcca0e05bd45ea2de1668c1d9b032e1a9154c2c259092d77031ddd359"},
     {file = "alabaster-0.7.12.tar.gz", hash = "sha256:a661d72d58e6ea8a57f7a86e37d86716863ee5e92788398526d58b26a4e4dc02"},
