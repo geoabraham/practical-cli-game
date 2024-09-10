@@ -1,0 +1,9 @@
+---
+security:
+  continue-on-vulnerability-error: false
+  ignore-cvss-severity-below: 0
+  ignore-cvss-unknown-severity: false
+  ignore-vulnerabilities:
+    "70612":
+      expires: "2025-01-01"
+      reason: we do not use untrusted templates without sandboxing
