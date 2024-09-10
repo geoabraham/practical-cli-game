@@ -1,4 +1,5 @@
 """Sphinx configuration."""
+
 project = "Practical Cli Game"
 author = "Geo Abraham"
 copyright = "2023, Geo Abraham"
