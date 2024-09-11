@@ -18,9 +18,9 @@ Changelog = "https://github.com/geoabraham/practical-cli-game/releases"
 [tool.poetry.dependencies]
 python = "^3.8"
 click = ">=8.0.1"
-adventurelib = "^1.2.1"
 rich = "^13.0.1"
 rich-click = "^1.6.0"
+requests = "^2.32.3"
 
 [tool.poetry.dev-dependencies]
 Pygments = ">=2.10.0"
