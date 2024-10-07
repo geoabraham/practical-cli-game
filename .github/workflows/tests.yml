@@ -97,8 +97,10 @@ jobs:
         if: always() && matrix.session == 'tests'
         uses: actions/upload-artifact@v4
         with:
-          name: coverage-data
+          name: coverage-data-${{ matrix.job.target }}
           path: ".coverage.*"
+          overwrite: true
+          retention-days: 1
 
       - name: Upload documentation
         if: matrix.session == 'docs-build'
@@ -138,7 +140,8 @@ jobs:
       - name: Download coverage data
         uses: actions/download-artifact@v4
         with:
-          name: coverage-data
+          pattern: coverage-data
+          merge-multiple: true
 
       - name: Combine coverage data and display human readable report
         run: |
@@ -149,4 +152,4 @@ jobs:
           nox --session=coverage -- xml
 
       - name: Upload coverage report
-        uses: codecov/codecov-action@v4.5.0
+        uses: codecov/codecov-action@v4.6.0
