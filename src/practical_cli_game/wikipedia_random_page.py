@@ -10,8 +10,8 @@ def main(locale_code: str = None) -> tuple:
     try:
         response = requests.get(API_URL.format(locale=locale_code))
 
-        if not response.ok:
-            raise Exception(f"Failed to retrieve random page: {response.status_code}")
+        # Check if the request was successful
+        response.raise_for_status()
 
         data = response.json()
         return data["title"], data["extract"]
