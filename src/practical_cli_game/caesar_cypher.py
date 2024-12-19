@@ -10,24 +10,24 @@ def main() -> None:
     key = 13
 
     encrypted_message = encrypt_message(secret_message, key)
+    assert encrypted_message != secret_message
 
-    print(encrypted_message)
-
-    decrypted_message = encrypt_message(encrypted_message, key, "decrypt")
-
-    print(decrypted_message)
+    decrypted_message = encrypt_message(encrypted_message, key, mode=False)
+    assert decrypted_message == secret_message
 
 
-def encrypt_message(message: str, key: int, mode: str = "encrypt") -> str:
-    """_summary_
+def encrypt_message(message: str, key: int, mode: bool = True) -> str:
+    """
+    Encrypts or decrypts a message using Caesar cipher.
 
     Args:
-        message (str): _description_
-        key (int): _description_
-        mode (str, optional): _description_. Defaults to "encrypt".
+        message (str): The message to be encrypted/decrypted.
+        key (int): The number of positions by which letters should be shifted.
+        mode (bool, optional): If True, the function will encrypt the message.
+            If False, it will decrypt the message. Defaults to True.
 
     Returns:
-        _type_: _description_
+        str: The encrypted/decrypted message.
     """
     encrypted_message = ""
     for symbol in message:
@@ -35,16 +35,10 @@ def encrypt_message(message: str, key: int, mode: str = "encrypt") -> str:
             symbol_index = SYMBOLS.find(symbol)
 
             # Perform encryption/decryption:
-            if mode == "encrypt":
-                encrypted_index = symbol_index + key
-            elif mode == "decrypt":
-                encrypted_index = symbol_index - key
-
-            # Handle wrap-around, if needed:
-            if encrypted_index >= len(SYMBOLS):
-                encrypted_index -= len(SYMBOLS)
-            elif encrypted_index < 0:
-                encrypted_index += len(SYMBOLS)
+            if mode:
+                encrypted_index = (symbol_index + key) % len(SYMBOLS)
+            else:
+                encrypted_index = (symbol_index - key) % len(SYMBOLS)
 
             encrypted_message += SYMBOLS[encrypted_index]
         else:
